@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: monitor-server
+server:
+  port: 8001
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: true
+    serviceUrl:
+      defaultZone: http://localhost:${server.port}/eureka/
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS
